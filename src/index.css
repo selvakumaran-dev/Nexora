@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --fs-h1: 2.25rem;
+  /* 36px */
+  --fs-body: 1rem;
+  /* 16px */
+
+  /* Primary Gradients */
+  --grad-primary: linear-gradient(135deg, #1A73E8 0%, #03D7BE 100%);
+  --grad-soft: linear-gradient(135deg, rgba(10, 15, 43, 0.95) 0%, rgba(26, 115, 232, 0.85) 100%);
+
+  /* Admin Gradients */
+  --grad-admin: linear-gradient(135deg, #7C3AED 0%, #FB923C 100%);
+  --grad-admin-dark: linear-gradient(135deg, #4C1D95 0%, #7C3AED 100%);
+  --grad-admin-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+  --grad-sidebar: linear-gradient(180deg, #0f0a1f 0%, #1a0f2e 50%, #0f0a1f 100%);
+
+  /* Admin Colors */
+  --admin-purple: #7C3AED;
+  --admin-orange: #FB923C;
+  --admin-dark: #0f0a1f;
+  --admin-darker: #0a0714;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #F4F7FA;
+  color: #0A0F2B;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Admin Dark Scrollbar */
+.admin-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.4);
+}
+
+.admin-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-dark {
+  background: rgba(15, 10, 31, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--grad-admin);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated Gradient Border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(#fff, #fff) padding-box,
+    var(--grad-admin) border-box;
+  border: 2px solid transparent;
+}
+
+/* Admin Card Hover Effect */
+.admin-card {
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.admin-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.15);
+}
+
+/* Glow Effects */
+.glow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.glow-orange {
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.3);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      rgba(139, 92, 246, 0.1) 0%,
+      rgba(251, 146, 60, 0.2) 50%,
+      rgba(139, 92, 246, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Slide Up Animation for Install Prompt */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+/* Fade In Animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Pulse Animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid currentColor;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+/* Admin Sidebar Active Indicator */
+.sidebar-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: var(--grad-admin);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Floating Orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb-purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, transparent 70%);
+}
+
+.orb-orange {
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.4) 0%, transparent 70%);
+  animation-delay: 3s;
+}
+
+/* Button Styles */
+.btn-admin-primary {
+  background: var(--grad-admin);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-admin-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-admin-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-admin-primary:hover {
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Input Focus States */
+.input-admin:focus {
+  border-color: var(--admin-purple);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* Table Row Hover */
+.table-row-hover:hover {
+  background: linear-gradient(90deg,
+      rgba(139, 92, 246, 0.03) 0%,
+      rgba(251, 146, 60, 0.02) 100%);
+}
+
+/* Status Indicators */
+.status-online {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.status-offline {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+}
+
+.status-away {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+/* Stat Card Icons */
+.stat-icon {
+  background: var(--grad-admin);
+  box-shadow: 0 8px 20px -8px rgba(139, 92, 246, 0.5);
+}
+
+/* Chart Container */
+.chart-container {
+  background: linear-gradient(180deg,
+      rgba(139, 92, 246, 0.02) 0%,
+      transparent 100%);
+}
+
+/* Notification Badge */
+.notification-badge {
+  background: var(--grad-admin);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile Menu Overlay */
+.mobile-overlay {
+  background: rgba(15, 10, 31, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+/* Loading Skeleton */
+.skeleton {
+  background: linear-gradient(90deg,
+      #f0f0f0 25%,
+      #e0e0e0 50%,
+      #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Dropdown Shadow */
+.dropdown-shadow {
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(139, 92, 246, 0.1);
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN UTILITIES */
+/* ============================================ */
+
+/* Touch-friendly tap targets */
+@media (pointer: coarse) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: env(safe-area-inset-bottom, 0);
+  z-index: 50;
+}
+
+/* Safe area padding for notched devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+.safe-area-left {
+  padding-left: env(safe-area-inset-left, 0);
+}
+
+.safe-area-right {
+  padding-right: env(safe-area-inset-right, 0);
+}
+
+/* Mobile-first responsive typography */
+.text-responsive-xs {
+  font-size: 0.75rem;
+}
+
+.text-responsive-sm {
+  font-size: 0.875rem;
+}
+
+.text-responsive-base {
+  font-size: 1rem;
+}
+
+.text-responsive-lg {
+  font-size: 1.125rem;
+}
+
+.text-responsive-xl {
+  font-size: 1.25rem;
+}
+
+.text-responsive-2xl {
+  font-size: 1.5rem;
+}
+
+.text-responsive-3xl {
+  font-size: 1.875rem;
+}
+
+.text-responsive-4xl {
+  font-size: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive-2xl {
+    font-size: 1.75rem;
+  }
+
+  .text-responsive-3xl {
+    font-size: 2.25rem;
+  }
+
+  .text-responsive-4xl {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-responsive-2xl {
+    font-size: 2rem;
+  }
+
+  .text-responsive-3xl {
+    font-size: 2.5rem;
+  }
+
+  .text-responsive-4xl {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-2xl {
+    font-size: 2.25rem;
+  }
+
+  .text-responsive-3xl {
+    font-size: 3rem;
+  }
+
+  .text-responsive-4xl {
+    font-size: 4rem;
+  }
+}
+
+/* Mobile slide-up panel */
+.slide-up-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.slide-up-panel.open {
+  transform: translateY(0);
+}
+
+/* Mobile overlay */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 90;
+}
+
+.mobile-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Swipe handle for mobile panels */
+.swipe-handle {
+  width: 36px;
+  height: 4px;
+  background: #d1d5db;
+  border-radius: 2px;
+  margin: 8px auto 16px;
+}
+
+/* Mobile card stacking */
+@media (max-width: 639px) {
+  .card-stack>*+* {
+    margin-top: 0.75rem;
+  }
+}
+
+/* Responsive padding utilities */
+.px-responsive {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .px-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .px-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Responsive grid gap */
+.gap-responsive {
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .gap-responsive {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gap-responsive {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile-first visible/hidden utilities */
+.mobile-only {
+  display: block;
+}
+
+.tablet-only,
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .tablet-only {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Responsive container */
+.container-responsive {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-responsive {
+    max-width: 1280px;
+  }
+}
+
+/* Fix for PWA standalone mode */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+
+  .glass,
+  .glass-dark {
+    background: white;
+    backdrop-filter: none;
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark mode media query support */
+@media (prefers-color-scheme: dark) {
+  .auto-dark-mode {
+    background-color: #0f0a1f;
+    color: #f9fafb;
+  }
+}
+
+/* Orientation-specific styles */
+@media (orientation: landscape) and (max-height: 500px) {
+  .landscape-compact {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Very small screens (old phones) */
+@media (max-width: 360px) {
+  .text-responsive-4xl {
+    font-size: 1.75rem;
+  }
+
+  .text-responsive-3xl {
+    font-size: 1.5rem;
+  }
+
+  .px-responsive {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
