@@ -9,16 +9,16 @@
 </p>
 
 <p align="center">
-  A modern professional networking platform that connects people through shared skills and interests.
+  A premium, high-security professional networking platform designed for institutional communities.
 </p>
 
 <p align="center">
   <a href="#features">Features</a> •
   <a href="#tech-stack">Tech Stack</a> •
   <a href="#getting-started">Getting Started</a> •
+  <a href="#deployment">Deployment</a> •
   <a href="#api-documentation">API</a> •
-  <a href="#pwa-support">PWA</a> •
-  <a href="#contributing">Contributing</a>
+  <a href="#security">Security</a>
 </p>
 
 <p align="center">
@@ -26,381 +26,141 @@
   <img src="https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
   <img src="https://img.shields.io/badge/MongoDB-8.0-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
   <img src="https://img.shields.io/badge/Socket.IO-4.7-010101?style=for-the-badge&logo=socket.io&logoColor=white" alt="Socket.IO">
-  <img src="https://img.shields.io/badge/PWA-Enabled-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white" alt="PWA">
+  <img src="https://img.shields.io/badge/Render-Deployed-00E5B6?style=for-the-badge&logo=render&logoColor=white" alt="Render">
 </p>
 
 ---
 
 ## 📖 Overview
 
-**Nexora** is a full-stack professional networking platform designed to help individuals discover and connect with like-minded professionals based on their skills, interests, and goals. Unlike traditional networking platforms that focus on quantity, Nexora emphasizes quality connections that lead to meaningful collaborations and learning opportunities.
+**Nexora** is a state-of-the-art full-stack professional networking platform tailored for educational and corporate institutions. It focuses on creating secure, high-quality connections within dedicated organizational boundaries. By leveraging intelligent matching and real-time communication, Nexora transforms a simple directory into a vibrant, collaborative ecosystem.
 
-### 🎯 Mission
-
-To create a space where professionals can:
-- **Discover** people with complementary skills
-- **Connect** through shared interests
-- **Collaborate** on projects and ideas
-- **Grow** together professionally
+### 🏛️ Intra-College Networking
+Nexora is built around the concept of **Institutional Isolation**. Students and professionals connect within their specific college or organization using unique **College Codes**, ensuring a private and relevant networking experience.
 
 ---
 
 ## ✨ Features
 
-### 🔍 Smart Discovery
-Intelligent matching algorithm that suggests connections based on your skills, interests, and professional goals.
+### 🏢 Institutional Admin Console
+A dedicated workspace for college administrators to:
+- Manage the student network and user accounts.
+- Update institution details (Website, Contact, Address) in real-time.
+- Monitor community engagement and platform metrics.
+- Perform administrative deletions and profile audits.
 
-### 💬 Real-Time Chat
-Instant messaging powered by Socket.IO with:
-- One-on-one conversations
-- Message read receipts
-- Online/offline status indicators
-- Typing indicators
+### 🌐 Smart Institutional Discovery
+Intelligent matching algorithm restricted to your institution:
+- Connect with peers based on skills (React, Python, etc.) and goals.
+- Privacy-first approach: You only see people from your own college.
+- **Match Scores**: Instantly see how well you align with other members.
 
-### 👥 Contact Management
-- Send and receive connection requests
-- Organize contacts efficiently
-- Block/unblock users
+### 💬 Unified Communication Center
+Instant messaging system powered by Socket.IO featuring:
+- **WebRTC Voice & Video Calls**: High-quality, peer-to-peer calling integrated directly into chats.
+- **Media Sharing**: Upload and share images or documents instantly.
+- **Real-time Status**: Live online/offline/away indicators and typing states.
+- **Notification Badges**: Dynamic red dots in the navigation bar for unread messages.
 
-### 📊 Analytics Dashboard
-Personal dashboard with:
-- Connection statistics
-- Activity metrics
-- Growth visualizations
-- Recent activity feed
+### 📱 Premium Mobile Experience
+Every feature of Nexora is re-engineered for mobile excellence:
+- **Responsive Modals**: Full-screen student details and edit views on mobile.
+- **Sticky Navigation**: Optimized headers and controls for touch-first interaction.
+- **Tactile UI**: High-density information display tailored for smaller screens.
 
-### 💻 Code Sharing
-Share code snippets with syntax highlighting:
-- Multiple language support
-- Public/private snippets
-- Copy to clipboard functionality
-
-### 📋 Kanban Board
-Built-in project management with drag-and-drop Kanban boards to organize your tasks and projects.
-
-### 🔎 Advanced Search
-Powerful user directory with:
-- Skill-based filtering
-- Interest matching
-- Location filters
-- Sorting options
-
-### 📱 Progressive Web App (PWA)
-Full PWA support for a native app experience:
-- Install on any device
-- Works offline
-- Background sync
-- Push notifications (coming soon)
-
-### 🔐 Secure Authentication
-- Email/password authentication
-- Google OAuth 2.0
-- JWT-based sessions
-- Password hashing with bcrypt
+### 💻 Developer Hub
+- **Collaborative Code Snippets**: Share and discover code with syntax highlighting.
+- **Project Kanban**: Integrated task management for team collaborations.
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
+### Frontend & UI
+- **React 19.2**: Modern UI framework with Concurrent Mode.
+- **TailwindCSS**: Premium, utility-first styling for a sleek aesthetic.
+- **Framer Motion**: State-of-the-art micro-animations and transitions.
+- **Socket.IO Client**: Real-time event synchronization.
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **React** | 19.2 | UI Framework |
-| **Vite** | 7.2 | Build Tool & Dev Server |
-| **TailwindCSS** | 3.4 | Styling |
-| **Framer Motion** | 12.x | Animations |
-| **React Router** | 7.x | Client-side Routing |
-| **Recharts** | 3.5 | Data Visualization |
-| **Socket.IO Client** | 4.8 | Real-time Communication |
-| **Axios** | 1.13 | HTTP Client |
-| **Lucide React** | 0.555 | Icons |
-| **@hello-pangea/dnd** | 18.0 | Drag & Drop |
-
-### Backend
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Node.js** | 20+ | Runtime |
-| **Express** | 4.18 | Web Framework |
-| **MongoDB** | 7+ | Database |
-| **Mongoose** | 8.0 | ODM |
-| **Socket.IO** | 4.7 | Real-time Events |
-| **JWT** | 9.0 | Authentication |
-| **Passport** | 0.7 | OAuth Strategies |
-| **Helmet** | 8.1 | Security Headers |
-| **Joi** | 18.0 | Validation |
-| **Pino** | 10.1 | Logging |
-| **ioredis** | 5.8 | Redis Client (Caching) |
-
----
-
-## 📁 Project Structure
-
-```
-nexora/
-├── 📂 public/                    # Static assets & PWA files
-│   ├── icon-*.png               # PWA icons (all sizes)
-│   ├── icon.svg                 # Vector logo
-│   ├── manifest.json            # PWA manifest
-│   ├── sw.js                    # Service Worker
-│   └── offline.html             # Offline fallback page
-│
-├── 📂 src/                       # Frontend source code
-│   ├── 📂 components/           # Reusable UI components
-│   │   ├── ButtonPrimary.jsx
-│   │   ├── ErrorBoundary.jsx
-│   │   ├── InstallPrompt.jsx
-│   │   └── Navbar.jsx
-│   │
-│   ├── 📂 context/              # React Context providers
-│   │   ├── AuthContext.jsx
-│   │   └── ChatContext.jsx
-│   │
-│   ├── 📂 pages/                # Page components
-│   │   ├── AdvancedSearchPage.jsx
-│   │   ├── AuthCallback.jsx
-│   │   ├── ChatPage.jsx
-│   │   ├── CodeSharePage.jsx
-│   │   ├── Dashboard.jsx
-│   │   ├── DirectoryPage.jsx
-│   │   ├── KanbanPage.jsx
-│   │   ├── LandingPage.jsx
-│   │   └── LoginPage.jsx
-│   │
-│   ├── 📂 services/             # API & service layer
-│   │   ├── api.js               # Axios instance
-│   │   ├── authService.js
-│   │   ├── chatService.js
-│   │   ├── codeService.js
-│   │   ├── dashboardService.js
-│   │   ├── landingService.js
-│   │   ├── notificationService.js
-│   │   ├── socketService.js
-│   │   ├── userService.js
-│   │   └── webRTCService.js
-│   │
-│   ├── App.jsx                  # Main app component
-│   ├── main.jsx                 # Entry point
-│   └── index.css                # Global styles
-│
-├── 📂 server/                    # Backend source code
-│   ├── 📂 config/               # Configuration files
-│   ├── 📂 middleware/           # Express middleware
-│   │   ├── auth.js              # JWT authentication
-│   │   └── ...
-│   │
-│   ├── 📂 models/               # Mongoose models
-│   │   ├── User.js
-│   │   ├── Chat.js
-│   │   ├── Message.js
-│   │   ├── Contact.js
-│   │   ├── CodeSnippet.js
-│   │   ├── Notification.js
-│   │   ├── Session.js
-│   │   ├── ActivityLog.js
-│   │   └── AIResponse.js
-│   │
-│   ├── 📂 routes/               # API routes
-│   │   ├── auth.js              # Authentication
-│   │   ├── users.js             # User management
-│   │   ├── chats.js             # Chat operations
-│   │   ├── messages.js          # Message operations
-│   │   ├── contacts.js          # Contact management
-│   │   ├── code.js              # Code snippets
-│   │   ├── dashboard.js         # Analytics
-│   │   ├── landing.js           # Public data
-│   │   └── apiVersions.js       # Version management
-│   │
-│   ├── 📂 socket/               # Socket.IO handlers
-│   ├── 📂 utils/                # Utility functions
-│   ├── index.js                 # Server entry point
-│   └── seed.js                  # Database seeder
-│
-├── 📂 scripts/                   # Build & utility scripts
-│   └── generate-icons.cjs       # PWA icon generator
-│
-├── index.html                   # HTML template
-├── package.json                 # Frontend dependencies
-├── vite.config.js               # Vite configuration
-├── tailwind.config.js           # Tailwind configuration
-└── postcss.config.js            # PostCSS configuration
-```
+### Backend & Infrastructure
+- **Node.js & Express**: High-performance API architecture.
+- **MongoDB 8.0**: Advanced document-based data storage.
+- **Socket.IO**: Real-time signaling and messaging engine.
+- **WebRTC**: Peer-to-peer communication for audio/video calls.
+- **Redis (Optional)**: High-speed session and data caching.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
-- **Node.js** 20.x or higher
-- **MongoDB** 7.x or higher (local or Atlas)
-- **npm** or **yarn**
+- **Node.js** 20.x+
+- **MongoDB** 8.x+
 - **Git**
 
-### Installation
+### Fast-Track Installation
 
-#### 1. Clone the Repository
-
+#### 1. Clone & Set Up
 ```bash
-git clone https://github.com/yourusername/nexora.git
-cd nexora
-```
-
-#### 2. Install Frontend Dependencies
-
-```bash
+git clone https://github.com/selvakumaran/Nexora.git
+cd Nexora
 npm install
+cd server && npm install && cd ..
 ```
 
-#### 3. Install Backend Dependencies
-
+#### 2. Configure Environment
+Create a `.env` in the `server` folder:
 ```bash
-cd server
-npm install
-cd ..
-```
-
-#### 4. Configure Environment Variables
-
-Create a `.env` file in the `server` directory:
-
-```env
-# Server Configuration
-PORT=5000
-NODE_ENV=development
-
-# Database
 MONGODB_URI=mongodb://localhost:27017/nexora
-
-# Authentication
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-JWT_EXPIRES_IN=7d
-
-# Google OAuth (optional)
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
-
-# Redis (optional, for caching)
-REDIS_URL=redis://localhost:6379
-
-# Frontend URL (for CORS)
+JWT_SECRET=your_secret_pin
 CLIENT_URL=http://localhost:5173
 ```
 
-#### 5. Start MongoDB
-
+#### 3. Launch Development
+Nexora uses a unified development workflow:
 ```bash
-# If using local MongoDB
-mongod
+npm run dev # Launches both Vite and the API server
 ```
-
-#### 6. Seed the Database (Optional)
-
-```bash
-cd server
-npm run seed
-```
-
-#### 7. Start the Development Servers
-
-**Terminal 1 - Backend:**
-```bash
-cd server
-npm run dev
-```
-
-**Terminal 2 - Frontend:**
-```bash
-npm run dev
-```
-
-#### 8. Open in Browser
-
-Navigate to `http://localhost:5173`
 
 ---
 
-## 📱 PWA Support
+## 🚢 Deployment (Render Blueprint)
 
-Nexora is a fully-featured Progressive Web App that can be installed on any device.
+Nexora is optimized for **Render** using a single-web-service architecture.
 
-### PWA Features
-
-| Feature | Status | Description |
-|---------|--------|-------------|
-| **Installable** | ✅ | Add to home screen on iOS, Android, Windows, Mac |
-| **Offline Mode** | ✅ | Works without internet connection |
-| **App Icons** | ✅ | 12 optimized sizes (16px - 512px) |
-| **Splash Screens** | ✅ | Custom launch screens for iOS |
-| **App Shortcuts** | ✅ | Quick access to Dashboard, Chat, Discover |
-| **Background Sync** | ✅ | Sync data when connection restored |
-| **Share Target** | ✅ | Receive shared content from other apps |
-| **Standalone Mode** | ✅ | Runs in its own window |
-| **Push Notifications** | 🔜 | Coming soon |
-
-### Manifest Configuration
-
-```json
-{
-  "name": "Nexora - Professional Networking",
-  "short_name": "Nexora",
-  "display": "standalone",
-  "theme_color": "#9333ea",
-  "background_color": "#ffffff",
-  "orientation": "any",
-  "categories": ["social", "productivity", "business"]
-}
-```
-
-### Service Worker
-
-The service worker (`public/sw.js`) implements:
-- **Cache-first** strategy for static assets
-- **Network-first** strategy for API calls
-- **Stale-while-revalidate** for images
-- **Offline fallback** page
-
-### Generating PWA Icons
-
-```bash
-node scripts/generate-icons.cjs
-```
-
-This generates all required icon sizes from `public/icon.svg`.
+1. **Root Build Script**: `npm run build` handles both frontend compilation and server setup.
+2. **Unified Execution**: `npm start` serves the React app and API from the same process for cost efficiency.
+3. **Render Blueprint**: Just connect your repo and click "Apply" using the included `render.yaml`.
 
 ---
 
-## 📚 API Documentation
+## 🔐 Security & Privacy
+Nexora implements enterprise-grade security protocols:
+- **Regex Injection Protection**: All search and filter inputs are sanitized with `escapeRegex` to prevent ReDoS attacks.
+- **Institutional Isolation**: API-level enforcement ensures students cannot access data from other colleges.
+- **Socket Authorization**: Real-time room joining is strictly validated against chat membership.
+- **8-Digit PIN Authentication**: Simplified yet secure PIN-based access system.
 
-### Base URL
+---
 
-```
-Development: http://localhost:5000/api
-Production:  https://your-domain.com/api
-```
+## 🤝 Contributing
+Join the Nexora community!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Authentication
+---
 
-All protected endpoints require a JWT token in the Authorization header:
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```
-Authorization: Bearer <token>
-```
+---
 
-### Endpoints
-
-#### Auth Routes (`/api/auth`)
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/register` | Register new user |
-| `POST` | `/login` | Login with email/password |
-| `POST` | `/logout` | Logout user |
-| `GET` | `/me` | Get current user |
-| `GET` | `/google` | Initiate Google OAuth |
-| `GET` | `/google/callback` | Google OAuth callback |
+<p align="center">
+  Made with ❤️ by <strong>Selva Kumaran</strong>
+</p>
 
 #### User Routes (`/api/users`)
 
