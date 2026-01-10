@@ -1,7 +1,7 @@
 // Nexora Service Worker v2.0
 // Enhanced with better caching strategies and offline support
 
-const CACHE_VERSION = 'v2.0';
+const CACHE_VERSION = 'v2.1';
 const STATIC_CACHE = `nexora-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `nexora-dynamic-${CACHE_VERSION}`;
 const API_CACHE = `nexora-api-${CACHE_VERSION}`;
@@ -14,6 +14,7 @@ const STATIC_ASSETS = [
     '/icon.svg',
     '/icon-192.png',
     '/icon-512.png',
+    '/icon-144.png',
     '/manifest.json'
 ];
 
@@ -98,9 +99,9 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Stale-while-revalidate for navigation (HTML pages)
+    // Network-first for navigation (HTML pages) to ensure fresh content
     if (request.mode === 'navigate') {
-        event.respondWith(staleWhileRevalidate(request, DYNAMIC_CACHE));
+        event.respondWith(networkFirst(request, DYNAMIC_CACHE));
         return;
     }
 
@@ -375,4 +376,4 @@ self.addEventListener('message', (event) => {
     }
 });
 
-console.log('[SW] Service Worker script loaded v' + CACHE_VERSION);
+console.log('[SW] Service Worker script loaded ' + CACHE_VERSION);

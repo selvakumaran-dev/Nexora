@@ -23,7 +23,7 @@ const USERS = [
         name: 'Alex Johnson',
         email: 'user@nexora.io',
         password: 'User@123',
-        role: 'user',
+        role: 'student',
         headline: 'Full Stack Developer',
         bio: 'Passionate about building scalable web applications.',
         skills: ['JavaScript', 'React', 'Node.js'],

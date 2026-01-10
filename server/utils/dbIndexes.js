@@ -19,16 +19,7 @@ export const createIndexes = async () => {
 
         // Only creating performance indexes not defined in schema
         await usersCollection.createIndexes([
-            // Skills-based search
-            {
-                key: { skills: 1 },
-                name: 'skills_array'
-            },
-            // Interests-based search
-            {
-                key: { interests: 1 },
-                name: 'interests_array'
-            },
+
             // Status lookup (for online users)
             {
                 key: { status: 1 },
